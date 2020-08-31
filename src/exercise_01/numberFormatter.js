@@ -13,6 +13,4 @@ export default function formatNumber(number, option) {
     result = '$ ' + result;
   }
   return result;
-
-  throw new Error('Please delete this line and implement the function');
 }
