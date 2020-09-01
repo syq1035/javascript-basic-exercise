@@ -12,5 +12,28 @@ export default class Vector {
   // * Please do NOT modify the signature of the class. Please put all your code in the Vector
   // class.
 
-  // PLEASE DELETE THIS LINE AND ADD YOUR IMPLEMENTATION HERE
+  constructor(x, y) {
+    this.x = x;
+    this.y = y;
+    Object.defineProperty(this, 'x', { writable: false });
+    Object.defineProperty(this, 'y', { writable: false });
+  }
+
+
+  distance() {
+    const distance = Math.sqrt((this.x ** 2) + (this.y ** 2));
+    return distance;
+  }
+
+  static plus(vector1, vector2) {
+    const x = vector1.x + vector2.x;
+    const y = vector1.y + vector2.y;
+    return new Vector(x, y);
+  }
+
+  static minus(vector1, vector2) {
+    const x = vector1.x - vector2.x;
+    const y = vector1.y - vector2.y;
+    return new Vector(x, y);
+  }
 }
